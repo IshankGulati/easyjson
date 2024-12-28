@@ -9,7 +9,7 @@ import (
 	"strings"
 	"unicode"
 
-	"github.com/mailru/easyjson"
+	"github.com/IshankGulati/easyjson"
 )
 
 // Target this byte size for initial slice allocation to reduce garbage collection.
@@ -149,7 +149,7 @@ func (g *Generator) genTypeDecoderNoCheck(t reflect.Type, out string, tags field
 
 		} else {
 
-			capacity := 1
+			capacity := 4
 			if elem.Size() > 0 {
 				capacity = minSliceBytes / int(elem.Size())
 			}
